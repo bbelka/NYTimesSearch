@@ -1,0 +1,21 @@
+.jumbotron{
+    background-color: lightcoral;
+    border-radius: 15px;
+}
+
+.searchContainer{
+    border: 1px solid grey;
+border-radius: 15px;
+}
+
+.topRow{
+    border-bottom: 1px solid grey;
+    min-height: 50px;
+    background-color: lightcoral;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.searchRow{
+    min-height: 50px;
+}
