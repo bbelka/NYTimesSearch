@@ -11,23 +11,22 @@ var endYear
 var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?&api-key=AexBs82F271plW5NYllpAgocdxd0Q2Dw"
 
 //Search button click event
-search.on("click", function () {
+search.on("click", e => {
+    e.preventDefault()
     searchDiv.empty();
-    searchFunc();
+    searchF();
 });
 
 //Clear for click event
-clear.on("click", function () {
-    event.preventDefault();
+clear.on("click", e => {
+    e.preventDefault();
     document.getElementById('theform').reset();
     searchDiv.empty();
 });
 
-
 //Pull search parameters from form
 //Set query full url
-function searchFunc() {
-    event.preventDefault();
+function searchF() {
     var numberRec = $("#number-records").val()
     searchQuery = "&q=" + ($("#search-term").val().trim());
     queryURL = queryURL + searchQuery;
@@ -86,6 +85,10 @@ function searchFunc() {
             //append content to the page
             newDiv.append(searchP);
             searchDiv.append(newDiv);
+
+            $('html, body').animate({
+                scrollTop: searchDiv.offset().top
+            }, 1000);
         };
     })
 };
